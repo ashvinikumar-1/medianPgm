@@ -22,9 +22,9 @@ class Game
   cell[20]=8;
   cell[26]=0;
   int k=findMinThrows(cell,n);
-  System.out.println(k);
+  System.out.println("Min Throws to get from First to last cell "+k);
 int k2=findMinThrowsTS(cell,n);
-System.out.println(k2);
+System.out.println("Min throws to get from last to first cell "+k2);
   }
   static class QEntry
   {
@@ -93,8 +93,9 @@ System.out.println(k2);
    if(visited[i]==false){
    QEntry nqe1=new QEntry();
    nqe1.distance=qe1.distance+1;
-   if(board[i]!=-1)
+   if(board[i]!=-1){
     nqe1.vertex=board[i];
+    }
   else
     nqe1.vertex=i;
   q1.add(nqe1);  
